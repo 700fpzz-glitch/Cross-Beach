@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross Beach | Treino funcional em Vilar dos Teles, São João de Meriti - RJ</title>
+<meta name="description" content="Cross Beach: espaço de treino com energia de praia em Vilar dos Teles, São João de Meriti. Fale pelo WhatsApp e agende sua aula.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oceano:#0B3C5D; --fundo:#072a42; --turq:#0088A8; --ceu:#48CAE4; --areia:#F4FAFC; --sol:#FFE29A;
+  --titulo:'Archivo Black','Arial Black',Impact,sans-serif;
+  --corpo:'Outfit',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:400 1.08rem/1.65 var(--corpo);color:var(--oceano);background:var(--areia);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--titulo);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:.5em}
+
+/* Header */
+header{position:fixed;inset:0 0 auto;z-index:30;background:rgba(7,42,66,.82);backdrop-filter:blur(12px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--titulo);font-size:1.3rem;color:#fff}
+.logo svg{width:38px;height:38px}
+nav ul{display:flex;gap:26px;list-style:none;padding:0;align-items:center}
+nav a{font-weight:500;color:#cfeaf3;transition:color .2s}
+nav a:hover{color:var(--sol)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:.85em 1.5em;border-radius:14px;font-weight:700;border:2px solid transparent;cursor:pointer;font:700 1rem var(--corpo);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn-sol{background:var(--sol);color:var(--fundo);box-shadow:0 6px 0 #d9b95c}
+.btn-sol:hover{box-shadow:0 9px 0 #d9b95c}
+.btn-linha{border-color:#fff;color:#fff}
+.btn-linha:hover{background:rgba(255,255,255,.14)}
+nav .btn{padding:.55em 1.1em;box-shadow:none}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:#fff}
+.burger span{display:block;width:26px;height:3px;background:currentColor;margin:5px auto;border-radius:2px;transition:.3s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;color:#fff;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-start;
+  background:linear-gradient(180deg,#0B3C5D 0%,#0088A8 48%,#48CAE4 74%,#bdeaf3 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:118px}
+.status{display:inline-flex;align-items:center;gap:10px;padding:.5em 1.1em;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);font-weight:500;font-size:.98rem;margin-bottom:20px}
+.status i{width:10px;height:10px;border-radius:50%;background:#ffb4a2}
+.status.aberto i{background:#7CFFB2;animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(124,255,178,0)}0%{box-shadow:0 0 0 0 rgba(124,255,178,.7)}}
+.hero h1{font-size:clamp(3.8rem,12vw,8.5rem);text-transform:uppercase;text-shadow:0 5px 0 rgba(7,42,66,.35)}
+.hero p.sub{font-size:clamp(1.1rem,2.4vw,1.35rem);max-width:30ch;margin:18px 0 28px;color:#e6f7fb}
+.acoes{display:flex;flex-wrap:wrap;gap:14px}
+.cena{position:absolute;left:0;right:0;bottom:0;width:100%;height:62%;min-height:340px;z-index:1}
+.cena .ondas{animation:onda 9s linear infinite}
+.cena .ondas.b{animation-duration:14s;animation-direction:reverse}
+.cena .ondas.c{animation-duration:6s}
+@keyframes onda{to{transform:translateX(-400px)}}
+.sol{transform-origin:900px 150px;animation:giro 40s linear infinite}
+@keyframes giro{to{transform:rotate(360deg)}}
+.palma{transform-origin:50% 100%;animation:brisa 5s ease-in-out infinite alternate}
+@keyframes brisa{from{transform:rotate(-2deg)}to{transform:rotate(2.5deg)}}
+.atleta{animation:pulo 1.6s ease-in-out infinite}
+.atleta.b{animation-duration:2.2s;animation-delay:.4s}
+@keyframes pulo{50%{transform:translateY(-8px)}}
+.entra{animation:entra .9s cubic-bezier(.2,.7,.2,1) both}
+.entra:nth-child(2){animation-delay:.1s}.entra:nth-child(3){animation-delay:.2s}.entra:nth-child(4){animation-delay:.3s}
+@keyframes entra{from{opacity:0;transform:translateY(24px)}}
+
+/* Energia */
+section.bloco{padding:96px 0}
+.intro{max-width:56ch;margin-bottom:48px;color:#2f5870}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{border-radius:32px 32px 120px 32px;color:#fff;padding:30px 28px 0;overflow:hidden;position:relative;min-height:430px;display:flex;flex-direction:column}
+.card:nth-child(1){background:linear-gradient(180deg,#0B3C5D,#0088A8)}
+.card:nth-child(2){background:linear-gradient(180deg,#0088A8,#2aa9c8);border-radius:32px 120px 32px 32px}
+.card:nth-child(3){background:linear-gradient(180deg,#1b8fb4,#48CAE4);color:var(--fundo)}
+.card h3{font-size:1.6rem;margin-bottom:.4em}
+.card p{font-size:1rem;max-width:30ch;opacity:.95}
+.card svg.fig{margin-top:auto;width:100%;height:210px}
+.card .pe{position:absolute;left:0;right:0;bottom:0;height:46px;background:var(--areia);opacity:.95;clip-path:ellipse(70% 100% at 50% 100%)}
+
+/* Horários */
+.faixa{background:linear-gradient(180deg,var(--areia),#dff3f8)}
+.grade{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:stretch}
+.quadro,.endereco{background:#fff;border-radius:28px;box-shadow:0 20px 50px rgba(11,60,93,.14);padding:clamp(24px,4vw,40px)}
+.quadro h2,.endereco h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:.7em}
+.lin{display:grid;grid-template-columns:130px 1fr;gap:6px 14px;padding:14px 16px;border-radius:16px;align-items:center}
+.lin+.lin{margin-top:8px}
+.lin b{font-family:var(--titulo);font-weight:400;font-size:1.05rem}
+.lin span{color:#2f5870}
+.lin.hoje{background:var(--oceano);color:#fff}
+.lin.hoje span{color:#d4f1f8}
+.lin.off{background:#eef6f9}
+.lin.off span{color:#6a8699}
+.etiqueta{display:inline-block;margin-left:8px;padding:.1em .6em;border-radius:99px;background:var(--sol);color:var(--fundo);font:700 .75rem var(--corpo);vertical-align:middle}
+.endereco p{margin-bottom:1em;color:#2f5870}
+.endereco strong{color:var(--oceano)}
+.mapa{margin:18px 0 22px;border-radius:20px;overflow:hidden;height:190px;background:#dff3f8}
+.mapa svg{width:100%;height:100%;display:block}
+.pino{animation:pulo 2s ease-in-out infinite}
+
+/* Rodapé */
+footer{background:var(--fundo);color:#cfeaf3;position:relative;padding:0 0 28px}
+footer .topo{display:block;width:100%;height:60px;background:#dff3f8;margin-bottom:-1px}
+.rod{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;padding-top:30px}
+footer h3{font-size:1.05rem;color:var(--ceu);margin-bottom:.6em}
+footer a:hover{color:var(--sol)}
+footer p{font-size:.98rem}
+.copy{text-align:center;margin-top:38px;font-size:.88rem;color:#7fa7bb}
+
+@media (max-width:980px){
+  .cards{grid-template-columns:1fr 1fr}
+  .card:nth-child(3){grid-column:1/-1;min-height:380px}
+  .grade{grid-template-columns:1fr}
+  .rod{grid-template-columns:1fr}
+}
+@media (max-width:780px){
+  .burger{display:block}
+  nav{position:absolute;top:66px;left:0;right:0;background:var(--fundo);max-height:0;overflow:hidden;transition:max-height .35s}
+  nav.aberto{max-height:380px}
+  nav ul{flex-direction:column;gap:0;padding:10px 20px 22px;align-items:stretch}
+  nav li a{display:block;padding:14px 4px}
+  nav .btn{margin-top:8px}
+  .cena{height:50%}
+}
+@media (max-width:560px){
+  .cards{grid-template-columns:1fr}
+  .lin{grid-template-columns:1fr}
+  section.bloco{padding:68px 0}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- Figuras reutilizáveis (traços arredondados) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="p-agacha" viewBox="0 0 120 140"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><circle cx="58" cy="22" r="10" fill="currentColor" stroke="none"/><path d="M58 38 56 74M58 46 90 48M56 74 86 86 80 122 94 124M56 74 80 82"/></g></symbol>
+    <symbol id="p-corre" viewBox="0 0 120 140"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><circle cx="70" cy="20" r="10" fill="currentColor" stroke="none"/><path d="M66 36 52 72M64 42 86 54 98 44M64 42 42 52 32 68M52 72 80 84 70 116M52 72 34 94 12 100"/></g></symbol>
+    <symbol id="p-levanta" viewBox="0 0 120 140"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="38" r="10" fill="currentColor" stroke="none"/><path d="M60 54V94M52 58 42 20M68 58 78 20M60 94 44 132M60 94 76 132"/><path d="M8 18H112" stroke-width="7"/><path d="M14 4v28M106 4v28" stroke-width="6"/></g></symbol>
+    <symbol id="p-alonga" viewBox="0 0 120 140"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="38" r="10" fill="currentColor" stroke="none"/><path d="M60 54 60 86M56 58 46 14M64 58 76 14M60 86 92 102 96 132M60 86 32 108 16 132"/></g></symbol>
+    <symbol id="p-onda" viewBox="0 0 64 64"><path d="M4 40c8-18 22-22 30-12 4 6-2 12-8 8 8 2 16-4 22 2 2 2 4 4 6 4v16H4z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a href="#inicio" class="logo" aria-label="Cross Beach, início">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0088A8"/><circle cx="44" cy="18" r="7" fill="#FFE29A"/><path d="M4 40c8-6 14-6 20 0s12 6 18 0 12-6 20 0v4c-8-6-14-6-20 0s-12 6-18 0-12-6-20 0z" fill="#48CAE4"/><g fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"><path d="M14 22h22M17 17v10M33 17v10"/></g><circle cx="26" cy="34" r="0"/></svg>
+      Cross Beach
+    </a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#energia">Treinos e Clima</a></li>
+        <li><a href="#horarios">Horários</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+        <li><a class="btn btn-sol" href="https://wa.me/5521964451676" target="_blank" rel="noopener">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="status entra" id="status"><i></i><span id="statusTxt">Seg, Qua e Sex: 6h às 8h e 18h às 21h</span></div>
+    <h1 class="entra">Cross<br>Beach</h1>
+    <p class="sub entra">O ritmo do treino com a energia da praia, em Vilar dos Teles, São João de Meriti.</p>
+    <div class="acoes entra">
+      <a class="btn btn-sol" href="https://wa.me/5521964451676?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20aula%20no%20Cross%20Beach" target="_blank" rel="noopener">Agendar aula pelo WhatsApp</a>
+      <a class="btn btn-linha" href="#localizacao">Ver localização</a>
+    </div>
+  </div>
+
+  <!-- Paisagem de praia -->
+  <svg class="cena" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Paisagem de praia com sol, mar, coqueiros e pessoas treinando na areia">
+    <defs>
+      <radialGradient id="halo"><stop offset="0" stop-color="#fff6d6" stop-opacity=".95"/><stop offset="1" stop-color="#FFE29A" stop-opacity="0"/></radialGradient>
+      <linearGradient id="mar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#48CAE4"/><stop offset="1" stop-color="#0088A8"/></linearGradient>
+    </defs>
+    <circle cx="900" cy="150" r="150" fill="url(#halo)"/>
+    <g class="sol"><g stroke="#fff3c4" stroke-width="5" stroke-linecap="round" opacity=".8"><path d="M900 80v-30M900 220v30M830 150h-30M970 150h30M850 100l-20-20M950 200l20 20M950 100l20-20M850 200l-20 20"/></g></g>
+    <circle cx="900" cy="150" r="52" fill="#FFE29A"/>
+    <!-- mar em camadas -->
+    <rect x="0" y="200" width="1200" height="140" fill="url(#mar)"/>
+    <g class="ondas b" opacity=".55"><path fill="#0B3C5D" d="M-400 232q100-24 200 0t200 0 200 0 200 0 200 0 200 0 200 0 200 0 200 0V300H-400z"/></g>
+    <g class="ondas" opacity=".7"><path fill="#0088A8" d="M-400 262q100-24 200 0t200 0 200 0 200 0 200 0 200 0 200 0 200 0 200 0V320H-400z"/></g>
+    <g class="ondas c"><path fill="#7fdcee" d="M-400 296q100-20 200 0t200 0 200 0 200 0 200 0 200 0 200 0 200 0 200 0V340H-400z"/></g>
+    <!-- areia e dunas -->
+    <path d="M0 360q200-40 420-14t440 6 340-24V500H0z" fill="#F4E4BE"/>
+    <path d="M0 410q260-30 520-6t680-12V500H0z" fill="#F4FAFC"/>
+    <!-- coqueiros -->
+    <g class="palma" style="transform-origin:130px 400px"><path d="M130 400C122 340 134 290 148 240" stroke="#6b4a2e" stroke-width="12" fill="none" stroke-linecap="round"/><g fill="#0B3C5D"><path d="M148 240C110 210 70 226 50 252 90 238 120 240 148 240z"/><path d="M148 240C120 196 84 190 56 204 100 206 126 220 148 240z"/><path d="M148 240C170 198 206 186 236 202 192 206 166 222 148 240z"/><path d="M148 240C190 222 226 236 244 262 204 246 176 244 148 240z"/><path d="M148 240C150 200 170 176 196 168 176 190 164 212 148 240z"/></g></g>
+    <g class="palma" style="transform-origin:1090px 410px;animation-delay:-2s"><path d="M1090 410C1100 350 1086 300 1070 262" stroke="#6b4a2e" stroke-width="10" fill="none" stroke-linecap="round"/><g fill="#0B3C5D"><path d="M1070 262C1100 230 1138 240 1158 266 1118 254 1094 256 1070 262z"/><path d="M1070 262C1092 222 1128 214 1152 226 1112 230 1090 244 1070 262z"/><path d="M1070 262C1046 226 1010 218 984 234 1026 236 1048 246 1070 262z"/><path d="M1070 262C1036 246 1000 260 986 288 1022 270 1046 266 1070 262z"/></g></g>
+    <!-- atletas -->
+    <g class="atleta" style="color:#072a42"><use href="#p-agacha" x="640" y="290" width="130" height="152"/></g>
+    <g class="atleta b" style="color:#0B3C5D"><use href="#p-corre" x="450" y="304" width="120" height="140"/></g>
+    <g class="atleta" style="color:#072a42;animation-delay:.7s"><use href="#p-levanta" x="820" y="296" width="130" height="152"/></g>
+  </svg>
+</section>
+
+<!-- ENERGIA -->
+<section class="bloco" id="energia">
+  <div class="wrap">
+    <h2>Energia e movimento</h2>
+    <p class="intro">Treinar perto do mar muda o astral. Aqui a turma se junta, o ritmo é constante e cada aula termina com a sensação de vento fresco no rosto e de meta cumprida.</p>
+    <div class="cards">
+      <article class="card">
+        <h3>Constância</h3>
+        <p>Rotina fixa, horários claros e a vontade de voltar na próxima aula.</p>
+        <svg class="fig" viewBox="0 0 300 210" aria-hidden="true"><circle cx="230" cy="50" r="26" fill="#FFE29A"/><path fill="#48CAE4" opacity=".6" d="M0 150q40-16 80 0t80 0 80 0 80 0v60H0z"/><g class="atleta" style="color:#fff"><use href="#p-corre" x="90" y="30" width="130" height="152"/></g></svg>
+        <div class="pe"></div>
+      </article>
+      <article class="card">
+        <h3>Comunidade</h3>
+        <p>Gente do bairro treinando junto, com incentivo de todos para cada superação.</p>
+        <svg class="fig" viewBox="0 0 300 210" aria-hidden="true"><path fill="#48CAE4" opacity=".55" d="M0 140q40-16 80 0t80 0 80 0 80 0v70H0z"/><g class="atleta" style="color:#fff"><use href="#p-agacha" x="40" y="40" width="120" height="140"/></g><g class="atleta b" style="color:#072a42"><use href="#p-alonga" x="150" y="40" width="120" height="140"/></g></svg>
+        <div class="pe"></div>
+      </article>
+      <article class="card">
+        <h3>Superação</h3>
+        <p>Cada carga e cada repetição levam você mais longe, no seu tempo e com orientação.</p>
+        <svg class="fig" viewBox="0 0 300 210" aria-hidden="true"><circle cx="70" cy="56" r="24" fill="#FFE29A"/><path fill="#fff" opacity=".35" d="M0 150q40-16 80 0t80 0 80 0 80 0v60H0z"/><g class="atleta" style="color:#072a42"><use href="#p-levanta" x="90" y="28" width="130" height="152"/></g></svg>
+        <div class="pe"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HORÁRIOS E LOCALIZAÇÃO -->
+<section class="bloco faixa" id="horarios">
+  <div class="wrap grade">
+    <div class="quadro">
+      <h2>Horários</h2>
+      <div class="lin" data-dias="1,3,5"><b>Seg, Qua e Sex</b><span>6h às 8h e 18h às 21h</span></div>
+      <div class="lin" data-dias="2,4"><b>Ter e Qui</b><span>20h às 21h</span></div>
+      <div class="lin off" data-dias="0,6"><b>Sáb e Dom</b><span>Fechado</span></div>
+    </div>
+    <div class="endereco" id="localizacao">
+      <h2>Localização</h2>
+      <p><strong>Rua Marechal Floriano, Lt12 Qd42</strong><br>Vilar dos Teles, São João de Meriti - RJ<br>CEP 25580-290</p>
+      <div class="mapa" aria-hidden="true">
+        <svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice">
+          <rect width="400" height="190" fill="#dff3f8"/>
+          <g fill="#c4e6ef"><rect x="14" y="14" width="100" height="60" rx="8"/><rect x="150" y="14" width="90" height="60" rx="8"/><rect x="280" y="14" width="106" height="60" rx="8"/><rect x="14" y="116" width="100" height="60" rx="8"/><rect x="280" y="116" width="106" height="60" rx="8"/></g>
+          <path d="M0 95h400M132 0v190M262 0v190" stroke="#fff" stroke-width="14"/>
+          <path d="M0 95h400" stroke="#48CAE4" stroke-width="3" stroke-dasharray="10 10"/>
+          <text x="16" y="90" font-size="11" fill="#0B3C5D" font-family="sans-serif">Rua Marechal Floriano</text>
+          <circle cx="198" cy="100" r="30" fill="#0088A8" opacity=".18"/>
+          <g class="pino"><path d="M198 104c-12-16-20-24-20-36a20 20 0 0 1 40 0c0 12-8 20-20 36z" fill="#0B3C5D" stroke="#fff" stroke-width="3"/><circle cx="198" cy="68" r="7" fill="#FFE29A"/></g>
+        </svg>
+      </div>
+      <div class="acoes">
+        <a class="btn btn-sol" style="background:var(--oceano);color:#fff;box-shadow:0 6px 0 #072a42" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJYQdgx8BlmQARD6eq7Q2mV14" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        <a class="btn btn-linha" style="color:var(--oceano);border-color:var(--oceano)" href="tel:+5521964451676">Ligar agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer id="contato">
+  <svg class="topo" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" style="background:var(--fundo)"><path fill="#dff3f8" d="M0 0h1200v26q-100 34-200 0t-200 0-200 0-200 0-200 0-200 0z"/></svg>
+  <div class="wrap">
+    <div class="rod">
+      <div>
+        <a href="#inicio" class="logo" style="margin-bottom:12px"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0088A8"/><circle cx="44" cy="18" r="7" fill="#FFE29A"/><path d="M4 40c8-6 14-6 20 0s12 6 18 0 12-6 20 0v4c-8-6-14-6-20 0s-12 6-18 0-12-6-20 0z" fill="#48CAE4"/></svg>Cross Beach</a>
+        <p>Treino com energia de praia em Vilar dos Teles.</p>
+        <svg viewBox="0 0 220 70" width="200" style="margin-top:14px" aria-hidden="true"><path fill="#0088A8" d="M0 52q20-16 40 0t40 0 40 0 40 0 40 0 20 0V70H0z"/><g style="color:#FFE29A"><use href="#p-levanta" x="76" y="2" width="56" height="66"/></g><circle cx="190" cy="16" r="9" fill="#FFE29A"/></svg>
+      </div>
+      <div>
+        <h3>Endereço</h3>
+        <p>Rua Marechal Floriano, Lt12 Qd42<br>Vilar dos Teles, São João de Meriti - RJ<br>CEP 25580-290</p>
+      </div>
+      <div>
+        <h3>Contato e horários</h3>
+        <p><a href="tel:+5521964451676">(21) 96445-1676</a><br>Seg, Qua e Sex: 6h às 8h e 18h às 21h<br>Ter e Qui: 20h às 21h<br>Sáb e Dom: fechado</p>
+      </div>
+    </div>
+    <p class="copy">© <span id="ano">2026</span> Cross Beach. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('menu');
+  function fecha(){m.classList.remove('aberto');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menu')}
+  b.addEventListener('click',function(){var o=m.classList.toggle('aberto');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',fecha)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')fecha()});
+  document.getElementById('ano').textContent=new Date().getFullYear();
+
+  // Destaca o dia de hoje e mostra se há aula agora
+  var agora=new Date(),d=agora.getDay(),h=agora.getHours()+agora.getMinutes()/60;
+  var faixas={1:[[6,8],[18,21]],3:[[6,8],[18,21]],5:[[6,8],[18,21]],2:[[20,21]],4:[[20,21]],0:[],6:[]};
+  document.querySelectorAll('.lin').forEach(function(l){
+    if(l.dataset.dias.split(',').indexOf(String(d))>-1){
+      l.classList.add('hoje');l.classList.remove('off');
+      l.querySelector('b').insertAdjacentHTML('beforeend','<em class="etiqueta" style="font-style:normal">hoje</em>');
+    }
+  });
+  var aberto=(faixas[d]||[]).some(function(f){return h>=f[0]&&h<f[1]});
+  var s=document.getElementById('status'),t=document.getElementById('statusTxt');
+  if(aberto){s.classList.add('aberto');t.textContent='Aula acontecendo agora. Chame no WhatsApp'}
+  else if((faixas[d]||[]).length===0){t.textContent='Hoje fechado. Aulas de segunda a sexta'}
+})();
+</script>
+</body>
+</html>
